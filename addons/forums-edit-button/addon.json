@@ -1,0 +1,18 @@
+{
+  "name": "Edit Button on Closed Topics",
+  "description": "Adds the edit button to your forum posts on closed topics.",
+  "credits": [
+    {
+      "name": "bluepig600",
+      "link": "https://scratch.mit.edu/users/bluepig600"
+    }
+  ],
+  "userscripts": [
+    {
+      "url": "userscript.js",
+      "matches": ["topics"]
+    }
+  ],
+  "tags": ["forums"],
+  "versionAdded": "1.42.0"
+}
