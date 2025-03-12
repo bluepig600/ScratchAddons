@@ -20,7 +20,7 @@ export default async function ({ addon, msg }) {
               const editLink = document.createElement('a');
               editLink.textContent = msg("edit");
               editLink.href = `https://scratch.mit.edu/discuss/post/${postId}/edit/`;
-              editLink.className = 'post-action'; // Assuming the report button has this class
+              editLink.className = 'post-edit'; // Assuming the report button has this class
               editLink.style.marginLeft = '3px';
 
               // Create a separator element
