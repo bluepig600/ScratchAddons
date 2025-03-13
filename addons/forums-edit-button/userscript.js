@@ -26,10 +26,10 @@ export default async function ({ addon, msg }) {
             // Create a separator element
             const separator = document.createElement("li");
             separator.textContent = "|";
-            separator.className = "post-action-separator"; // Assuming the separator has this class
-            separator.style.margin = "0 3px"; // Add space on both sides
+            separator.className = "post-action-separator";
+            separator.style.margin = "0 3px";
 
-            // Find the location to insert the edit link and separator
+            // add edit link and separator
             const actionButtons = userPostContainer.querySelector(".postfootright ul");
             if (actionButtons) {
               const reportButton = actionButtons.querySelector("li:last-child");
