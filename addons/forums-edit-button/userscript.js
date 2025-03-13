@@ -1,11 +1,11 @@
 export default async function ({ addon, msg }) {
   if (addon.auth.fetchIsLoggedIn()) {
-    const loggedInUser = await addon.auth.fetchUsername(); // Get the username
-    const userPosts = document.querySelectorAll(".postleft dt a.username"); // Find user posts
+    const loggedInUser = await addon.auth.fetchUsername();
+    const userPosts = document.querySelectorAll(".postleft dt a.username"); // get posts
 
-    // Check if the topic is closed by looking for follow button
+    //check for follow button
     const followButton = document.querySelector(".follow-button");
-    let topicClosed = followButton ? false : true; // Slightly redundant but human-like
+    let topicClosed = followButton ? false : true;
     if (!followButton) {
       topicClosed = true;
     }
@@ -15,15 +15,15 @@ export default async function ({ addon, msg }) {
         if (postUsername === loggedInUser) {
           const userPostContainer = post.closest(".blockpost");
           if (userPostContainer) {
-            // Add the edit link
-            const postId = userPostContainer.id.replace("p", ""); // Extract post ID from element ID
+            // add edit link
+            const postId = userPostContainer.id.replace("p", "");
             const editLink = document.createElement("a");
             editLink.textContent = msg("edit");
             editLink.href = `https://scratch.mit.edu/discuss/post/${postId}/edit/`;
-            editLink.className = "post-edit"; // Assuming the report button has this class
+            editLink.className = "post-edit";
             editLink.style.marginLeft = "3px";
 
-            // Create a separator element
+            // add separator
             const separator = document.createElement("li");
             separator.textContent = "|";
             separator.className = "post-action-separator";
